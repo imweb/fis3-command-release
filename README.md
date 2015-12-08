@@ -3,7 +3,7 @@
 ## 安装
 
 ```base
-npm install fis3-command-imweb
+npm install fis3-command-imweb -g
 ```
 
 ## 使用说明
