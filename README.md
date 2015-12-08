@@ -1,5 +1,11 @@
 # fis-command-release
 
+## 安装
+
+```base
+npm install fis3-command-imweb
+```
+
 ## 使用说明
 
 ```bash
