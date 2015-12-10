@@ -15,7 +15,7 @@ fis3 imweb dist
 
 ## Usage
 
-     Usage: fis release [media name]
+     Usage: fis imweb [media name]
 
      Options:
 
