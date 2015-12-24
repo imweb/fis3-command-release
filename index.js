@@ -5,11 +5,11 @@ var deploy = require('./lib/deploy.js');
 var livereload = require('./lib/livereload.js');
 var time = require('./lib/time.js');
 
-exports.name = 'release [media name]';
+exports.name = 'imweb [media name]';
 exports.desc = 'build and deploy your project';
 exports.options = {
   '-h, --help': 'print this help message',
-  '-d, --dest <path>': 'release output destination',
+  '-d, --dest <path>': 'imweb output destination',
   '-l, --lint': 'with lint',
   '-w, --watch': 'monitor the changes of project',
   '-L, --live': 'automatically reload your browser',
@@ -41,6 +41,10 @@ exports.run = function(argv, cli, env) {
     verbose: !!argv.verbose
   };
 
+  // fis3的lib/cli.js指定当前media的代码有问题，限定了fis3 release命令，此处修复该问题。@vienwu 20151224
+  if(argv && argv._ && argv._[1]){
+    fis.project.currentMedia(argv._[1]);
+  }
   // enable watch automatically when live is enabled.
   options.live && (options.watch = true);
 
@@ -91,14 +95,14 @@ exports.run = function(argv, cli, env) {
 
 function validate(argv) {
   if (argv._.length > 2) {
-    fis.log.error('Unregconized `%s`, please run `%s release --help`', argv._.slice(2).join(' '), fis.cli.name);
+    fis.log.error('Unregconized `%s`, please run `%s imweb --help`', argv._.slice(2).join(' '), fis.cli.name);
   }
 
   var allowed = ['_', 'dest', 'd', 'lint', 'l', 'watch', 'w', 'live', 'L', 'clean', 'c', 'unique', 'u', 'verbose', 'color', 'root', 'r', 'f', 'file', 'child-flag'];
 
   Object.keys(argv).forEach(function(k) {
     if (!~allowed.indexOf(k)) {
-      fis.log.error('The option `%s` is unregconized, please run `%s release --help`', k, fis.cli.name);
+      fis.log.error('The option `%s` is unregconized, please run `%s imweb --help`', k, fis.cli.name);
     }
   });
 }

@@ -1,7 +1,7 @@
 {
   "name": "fis3-command-imweb",
   "description": "fis imweb command.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "FIS Team <fis@baidu.com>",
   "homepage": "http://fis.baidu.com/",
   "keywords": [
@@ -22,5 +22,9 @@
     "chokidar": "1.2.0",
     "livereload-server-spec": "0.2.3",
     "portfinder": "0.4.0"
+  },
+  "devDependencies":{
+    "fis3":"^3.0.17",
+    "fis-parser-imweb-tplv2":"*"
   }
 }
