@@ -1,7 +1,7 @@
 {
   "name": "fis3-command-imweb",
   "description": "fis imweb command.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "FIS Team <fis@baidu.com>",
   "homepage": "http://fis.baidu.com/",
   "keywords": [
